@@ -9,5 +9,13 @@ public class Moeda {
         this.valor = valor;
     }
 
+    public float ConverteReaisDolar(){
+        return (float) (this.valor/5.17);
+    }
+
+    public float ConverteDolarReais(){
+        return (float) (this.valor * 5.17);
+    }
+
 
 }

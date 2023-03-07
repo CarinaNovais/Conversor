@@ -2,7 +2,7 @@ import javax.swing.*;
 
 import static javax.swing.JOptionPane.showMessageDialog;
 
-public class MenuConversor extends Temperatura {
+public class MenuConversor{
     public static void main(String[] args) {
        String[] opcoes = {"Conversor Moeda","Conversor Temperatura"};
        String opEntrada = (String) JOptionPane.showInputDialog(null,
@@ -20,6 +20,17 @@ public class MenuConversor extends Temperatura {
            String opMoedas = (String) JOptionPane.showInputDialog(null,
                    "Escolha uma opção:", "Moedas",
                    JOptionPane.QUESTION_MESSAGE, null, moedas, moedas[0]);
+           if(opMoedas == "Reais para Dolar"){
+               Moeda moeda = new Moeda();
+               Float entradaValor = Float.valueOf(JOptionPane.showInputDialog("Insira o valor em reais:"));
+               moeda.setValor(entradaValor);
+               JOptionPane.showMessageDialog(null, moeda.getValor()+ " reais em dolares é: "+ moeda.ConverteReaisDolar());
+           }else{
+               Moeda moeda = new Moeda();
+               Float entradaValor = Float.valueOf(JOptionPane.showInputDialog("Insira o valor em dolares:"));
+               moeda.setValor(entradaValor);
+               JOptionPane.showMessageDialog(null, moeda.getValor()+ " dolares em reais é: "+ moeda.ConverteDolarReais());
+           }
        }
     }
 }
