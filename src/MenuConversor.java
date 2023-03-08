@@ -5,42 +5,55 @@ public class MenuConversor {
     public static void main(String[] args) {
 
         while (true) {
-            String[] opcoes = {"Conversor Moeda", "Conversor Temperatura"};
-            String opEntrada = (String) JOptionPane.showInputDialog(null,
+            String[] opcoes = {"Conversor Temperatura","Conversor Quilometragem","Conversor Anos Luz","Conversor Moeda"};
+            int opEntrada = (Integer) JOptionPane.showInputDialog(null,
                     "Escolha uma opção:", "Menu",
-                    JOptionPane.QUESTION_MESSAGE, null, opcoes, opcoes[0]);
+                    JOptionPane.QUESTION_MESSAGE, null, opcoes, opcoes[3]);
 
-            if (opEntrada == "Conversor Temperatura") {
+            if (opEntrada == 0) {
                 try {// tratamento - ver se é nulo e ver se é caracter
                     MetodosConversao.metodo1();
                 } catch (InputMismatchException | NullPointerException | NumberFormatException ex) {
                     MetodosConversao.MensagemErro();
                 }
+            } else if (opEntrada == 1) {
+                try {// tratamento - ver se é nulo e ver se é caracter
+                    MetodosConversao.Quilometragem();
+                } catch (InputMismatchException | NullPointerException | NumberFormatException ex) {
+                    MetodosConversao.MensagemErro();
+                }
+            } else if (opEntrada == 2) {
+                try {// tratamento - ver se é nulo e ver se é caracter
+                    MetodosConversao.AnosLuz();
+                } catch (InputMismatchException | NullPointerException | NumberFormatException ex) {
+                    MetodosConversao.MensagemErro();
+                }
+                
             } else {
                 String[] moedas = {"Dolar para Reais", "Euro para Reais", "Libras Esterlinas para Reais",
                         "Peso Argentino para Reais", "Peso Chileno para Reais"};
-                String opMoedas = (String) JOptionPane.showInputDialog(null,
+                int opMoedas = (Integer) JOptionPane.showInputDialog(null,
                         "Escolha uma opção:", "Moedas",
                         JOptionPane.QUESTION_MESSAGE, null, moedas, moedas[0]);
-                if (opMoedas == "Dolar para Reais") {
+                if (opMoedas == 0) {
                     try {
                         MetodosConversao.DolarReais();
                     } catch (InputMismatchException | NullPointerException | NumberFormatException ex) {
                         MetodosConversao.MensagemErro();
                     }
-                } else if (opMoedas == "Euro para Reais") {
+                } else if (opMoedas == 1) {
                     try {
                         MetodosConversao.EuroReais();
                     } catch (InputMismatchException | NullPointerException | NumberFormatException ex) {
                         MetodosConversao.MensagemErro();
                     }
-                } else if (opMoedas == "Libras Esterlinas para Reais") {
+                } else if (opMoedas == 2) {
                     try {
                         MetodosConversao.LibrasEsterlinasReais();
                     } catch (InputMismatchException | NullPointerException | NumberFormatException ex) {
                         MetodosConversao.MensagemErro();
                     }
-                } else if (opMoedas == "Peso Argentino para Reais") {
+                } else if (opMoedas == 3) {
                     try {
                         MetodosConversao.PesoArgentinoReais();
                     } catch (InputMismatchException | NullPointerException | NumberFormatException ex) {
@@ -54,11 +67,16 @@ public class MenuConversor {
                     }
                 }
             }
-            String[] resposta = {"Sim", "Não"};
+            String[] resposta = {"Sim", "Não", "Cancelar"};
             int opRes = JOptionPane.showOptionDialog(null, "Deseja Continuar?",
                     "Responda a opcao",
                     JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, resposta, resposta[0]);
             if (opRes == 1) {
+                System.out.println("Programa Finalizado");
+                break;
+            }
+            else if(opRes== 2) {
+                System.out.println("Programa Concluido");
                 break;
             }
         }

@@ -9,6 +9,20 @@ public class MetodosConversao {
         JOptionPane.showMessageDialog(null, temperatura.getCels() + " °C em °F é: " + temperatura.RetornaF());
     }
 
+    public static void Quilometragem(){
+        Quilometragem tamanho = new Quilometragem();
+        Double entradaTamanho = Double.valueOf(JOptionPane.showInputDialog("Insira o valor em centimetros: "));
+        tamanho.setTamanho(entradaTamanho);
+        JOptionPane.showMessageDialog(null, tamanho.getTamanho() + " em  Quilometros é: " + tamanho.ConverteQuilometro());
+    }
+
+    public static void AnosLuz(){
+        AnosLuz distancia = new AnosLuz();
+        Integer entradaComprimento = Integer.valueOf(JOptionPane.showInputDialog("Insira o comprimento: "));
+        distancia.setComprimento(entradaComprimento);
+        JOptionPane.showMessageDialog(null, distancia.getComprimento() + " em  Anos Luz é: " + distancia.ConverteAnosLuz());
+    }
+
     public static void DolarReais() {
         Moeda moeda = new Moeda();
         Float entradaValor = Float.valueOf(JOptionPane.showInputDialog("Insira o valor em reais:"));
