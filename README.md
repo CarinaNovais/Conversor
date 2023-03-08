@@ -1,4 +1,4 @@
-# Conversor-Moeda-Temperatura
+# Conversor
 
 História
 
@@ -17,3 +17,9 @@ Lembrando que deve ser possível também converter de forma inversa ou seja:
 Como desafio extra incentivamos vocês a deixar fluir sua criatividade, se posso converter moedas, será que posso tal vez adicionar a meu programa outro tipo de conversões como temperatura por exemplo?
 
 É hora de surpreender nosso cliente com uma feature que tal vez nem ele sabia que precisava.
+
+Conversores extras 
+
+Após o usuário clicar em continuar no programa, apresente a caixa de opções de conversão para que possa verificar outro valor.
+
+Faça mais de um programa de conversão, além do de moedas, pode fazer de temperatura, quilometragem, anos-luz.
