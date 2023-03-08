@@ -29,8 +29,7 @@ public class MenuConversor {
                 } catch (InputMismatchException | NullPointerException | NumberFormatException ex) {
                     MetodosConversao.MensagemErro();
                 }
-                
-            } else {
+            } else if(opEntrada == "Conversor Moeda"){
                 String[] moedas = {"Dolar para Reais", "Euro para Reais", "Libras Esterlinas para Reais",
                         "Peso Argentino para Reais", "Peso Chileno para Reais"};
                 String opMoedas = (String) JOptionPane.showInputDialog(null,
@@ -67,6 +66,8 @@ public class MenuConversor {
                         MetodosConversao.MensagemErro();
                     }
                 }
+            }else{
+                close();
             }
             String[] resposta = {"Sim", "Não", "Cancelar"};
             int opRes = JOptionPane.showOptionDialog(null, "Deseja Continuar?",
@@ -81,5 +82,8 @@ public class MenuConversor {
                 break;
             }
         }
+    }
+
+    private static void close() {
     }
 }
