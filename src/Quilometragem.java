@@ -10,6 +10,6 @@ public class Quilometragem {
     }
 
     public double ConverteQuilometro(){
-        return (double) (this.tamanho * 1000);
+        return (double) (this.tamanho / 1000);
     }
 }

@@ -10,6 +10,6 @@ public class AnosLuz {
     }
 
     public double ConverteAnosLuz(){
-        return ((9.46 * Math.pow(10, 15)) * this.comprimento);
+        return ((9.46 * Math.pow(10, 12)) * this.comprimento);
     }
 }

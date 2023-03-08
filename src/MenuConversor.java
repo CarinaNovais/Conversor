@@ -1,28 +1,29 @@
 import javax.swing.*;
 import java.util.InputMismatchException;
-
+import java.text.NumberFormat;
+import java.util.Locale;
 public class MenuConversor {
     public static void main(String[] args) {
 
         while (true) {
             String[] opcoes = {"Conversor Temperatura","Conversor Quilometragem","Conversor Anos Luz","Conversor Moeda"};
-            int opEntrada = (Integer) JOptionPane.showInputDialog(null,
+            String opEntrada = (String) JOptionPane.showInputDialog(null,
                     "Escolha uma opção:", "Menu",
-                    JOptionPane.QUESTION_MESSAGE, null, opcoes, opcoes[3]);
+                    JOptionPane.QUESTION_MESSAGE, null, opcoes, opcoes[0]);
 
-            if (opEntrada == 0) {
+            if (opEntrada == "Conversor Temperatura") {
                 try {// tratamento - ver se é nulo e ver se é caracter
                     MetodosConversao.metodo1();
                 } catch (InputMismatchException | NullPointerException | NumberFormatException ex) {
                     MetodosConversao.MensagemErro();
                 }
-            } else if (opEntrada == 1) {
+            } else if (opEntrada == "Conversor Quilometragem") {
                 try {// tratamento - ver se é nulo e ver se é caracter
                     MetodosConversao.Quilometragem();
                 } catch (InputMismatchException | NullPointerException | NumberFormatException ex) {
                     MetodosConversao.MensagemErro();
                 }
-            } else if (opEntrada == 2) {
+            } else if (opEntrada == "Conversor Anos Luz") {
                 try {// tratamento - ver se é nulo e ver se é caracter
                     MetodosConversao.AnosLuz();
                 } catch (InputMismatchException | NullPointerException | NumberFormatException ex) {
@@ -32,28 +33,28 @@ public class MenuConversor {
             } else {
                 String[] moedas = {"Dolar para Reais", "Euro para Reais", "Libras Esterlinas para Reais",
                         "Peso Argentino para Reais", "Peso Chileno para Reais"};
-                int opMoedas = (Integer) JOptionPane.showInputDialog(null,
+                String opMoedas = (String) JOptionPane.showInputDialog(null,
                         "Escolha uma opção:", "Moedas",
                         JOptionPane.QUESTION_MESSAGE, null, moedas, moedas[0]);
-                if (opMoedas == 0) {
+                if (opMoedas == "Dolar para Reais") {
                     try {
                         MetodosConversao.DolarReais();
                     } catch (InputMismatchException | NullPointerException | NumberFormatException ex) {
                         MetodosConversao.MensagemErro();
                     }
-                } else if (opMoedas == 1) {
+                } else if (opMoedas == "Euro para Reais") {
                     try {
                         MetodosConversao.EuroReais();
                     } catch (InputMismatchException | NullPointerException | NumberFormatException ex) {
                         MetodosConversao.MensagemErro();
                     }
-                } else if (opMoedas == 2) {
+                } else if (opMoedas == "Libras Esterlinas para Reais") {
                     try {
                         MetodosConversao.LibrasEsterlinasReais();
                     } catch (InputMismatchException | NullPointerException | NumberFormatException ex) {
                         MetodosConversao.MensagemErro();
                     }
-                } else if (opMoedas == 3) {
+                } else if (opMoedas == "Peso Argentino para Reais") {
                     try {
                         MetodosConversao.PesoArgentinoReais();
                     } catch (InputMismatchException | NullPointerException | NumberFormatException ex) {
